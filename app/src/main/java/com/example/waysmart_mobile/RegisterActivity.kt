@@ -1,6 +1,5 @@
 package com.example.waysmart_mobile
 
-import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.view.View
@@ -27,7 +26,6 @@ class RegisterActivity : AppCompatActivity() {
         val btnRegistrarse = findViewById<Button>(R.id.btnRegistrarse)
         val tvYaTienesCuenta = findViewById<TextView>(R.id.tvYaTienesCuenta)
 
-        // Solo Carro y Moto con texto en negro sin crear archivos extra
         val tiposVehiculo = listOf("Tipo de vehículo", "Carro", "Moto")
         val adapter = object : ArrayAdapter<String>(
             this,
@@ -69,15 +67,10 @@ class RegisterActivity : AppCompatActivity() {
             }
 
             Toast.makeText(this, "Registro exitoso para $nombre ($vehiculo - $placa)", Toast.LENGTH_LONG).show()
-
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-            finish()
         }
 
         tvYaTienesCuenta.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+            Toast.makeText(this, "Redirigiendo a inicio de sesión...", Toast.LENGTH_SHORT).show()
             finish()
         }
     }
