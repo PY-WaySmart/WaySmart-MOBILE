@@ -1,3 +1,39 @@
 <resources>
     <string name="app_name">WaySmart-MOBILE</string>
+    <string name="title_my_vehicle">Mi Vehículo</string>
+    <string name="header_subtitle">Gestión y Estado General</string>
+    <string name="label_vehicle_type">Tipo de vehículo</string>
+    <string name="label_vehicle_brand_model">Marca / Modelo</string>
+    <string name="label_vehicle_plate">Placa</string>
+    <string name="label_vehicle_status">Estado</string>
+    <string name="btn_edit_vehicle_data">Editar Datos del Vehículo</string>
+    <string name="status_active">Activo</string>
+    <string name="status_pending">Pendiente</string>
+    <string name="dialog_edit_title">Editar Vehículo</string>
+    <string name="dialog_edit_subtitle">Actualiza la información y métricas clave</string>
+    <string name="btn_save">Guardar Cambios</string>
+    <string name="btn_cancel">Cancelar</string>
+    <string name="error_empty_fields">Por favor, completa todos los campos</string>
+    <string name="toast_updated_success">Datos del vehículo actualizados correctamente</string>
+    <string name="desc_back">Regresar</string>
+    <string name="desc_vehicle_illustration">Ilustración Vehículo</string>
+    <string name="hint_vehicle_type">Ej. Motocicleta, Automóvil</string>
+    <string name="hint_vehicle_brand_model">Ej. Honda Cargo 150</string>
+    <string name="hint_vehicle_plate">Ej. XYZ-123</string>
+    <string name="hint_odometer">Ej. 14,280 km</string>
+
+    <!-- Métricas adicionales -->
+    <string name="label_odometer">Kilometraje</string>
+    <string name="val_odometer">14,280 km</string>
+    <string name="label_fuel">Combustible</string>
+    <string name="val_fuel">85%</string>
+    <string name="label_model_year">Año Modelo</string>
+    <string name="val_model_year">2023</string>
+    <string name="label_last_maintenance">Última Revisión</string>
+    <string name="val_last_maintenance">15 Feb 2025</string>
+    <string name="label_insurance">Seguro SOAT</string>
+    <string name="val_insurance">Vigente</string>
+    <string name="chip_gps">GPS Activo</string>
+    <string name="section_metrics_title">Métricas de Rendimiento</string>
+    <string name="section_documentation_title">Documentación y Estado</string>
 </resources>
