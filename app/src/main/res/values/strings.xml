@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">WaySmart-MOBILE</string>
+    <string name="app_name">WaySmart</string>
+    <string name="email_hint">Correo electrónico</string>
+    <string name="password_hint">Contraseña</string>
+    <string name="login_button">Ingresar</string>
+    <string name="no_account_register">¿No tienes cuenta? Regístrate</string>
+    <string name="register_bold_part">Regístrate</string>
+    <string name="error_email_required">Ingresa tu correo electrónico</string>
+    <string name="error_password_required">Ingresa tu contraseña</string>
 </resources>
