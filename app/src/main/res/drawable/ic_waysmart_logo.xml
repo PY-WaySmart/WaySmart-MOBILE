@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="140dp"
+    android:height="140dp"
+    android:viewportWidth="140"
+    android:viewportHeight="140">
+
+    <!-- Folded Map Backdrop -->
+    <path
+        android:fillColor="#1F5383"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="3.5"
+        android:strokeLineJoin="round"
+        android:pathData="M 30,40 L 58,28 L 86,40 L 114,28 L 114,98 L 86,110 L 58,98 L 30,110 Z" />
+
+    <!-- Map Fold Vertical Divider Lines -->
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="2"
+        android:pathData="M 58,28 L 58,98 M 86,40 L 86,110" />
+
+    <!-- Route Line -->
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="4"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M 40,88 C 50,70 65,80 75,55 C 80,45 88,40 98,35" />
+
+    <!-- Location Pin at Top Right -->
+    <path
+        android:fillColor="#1565C0"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="2"
+        android:pathData="M 98,18 C 91,18 86,23 86,30 C 86,40 98,52 98,52 C 98,52 110,40 110,30 C 110,23 105,18 98,18 Z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M 98,30 m -3,0 a 3,3 0 1,0 6,0 a 3,3 0 1,0 -6,0" />
+
+    <!-- Delivery Truck Icon -->
+    <!-- Cargo Box -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M 68,68 L 92,68 L 92,84 L 68,84 Z" />
+    <!-- Cab -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M 93,74 L 102,74 L 105,80 L 105,84 L 93,84 Z" />
+    <!-- Cab Window -->
+    <path
+        android:fillColor="#1F5383"
+        android:pathData="M 95,76 L 100,76 L 102,80 L 95,80 Z" />
+    <!-- Wheels -->
+    <path
+        android:fillColor="#1F5383"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="1.5"
+        android:pathData="M 75,84 m -3.5,0 a 3.5,3.5 0 1,0 7,0 a 3.5,3.5 0 1,0 -7,0" />
+    <path
+        android:fillColor="#1F5383"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="1.5"
+        android:pathData="M 97,84 m -3.5,0 a 3.5,3.5 0 1,0 7,0 a 3.5,3.5 0 1,0 -7,0" />
+</vector>
