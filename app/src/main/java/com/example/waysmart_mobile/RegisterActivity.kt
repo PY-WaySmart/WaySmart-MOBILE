@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.Spinner
 import android.widget.TextView
 import android.widget.Toast
@@ -18,6 +19,7 @@ class RegisterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
 
+        val btnVolver = findViewById<ImageButton>(R.id.btnVolver)
         val etNombreCompleto = findViewById<EditText>(R.id.etNombreCompleto)
         val etCorreo = findViewById<EditText>(R.id.etCorreo)
         val etTelefono = findViewById<EditText>(R.id.etTelefono)
@@ -25,6 +27,10 @@ class RegisterActivity : AppCompatActivity() {
         val etPlaca = findViewById<EditText>(R.id.etPlaca)
         val btnRegistrarse = findViewById<Button>(R.id.btnRegistrarse)
         val tvYaTienesCuenta = findViewById<TextView>(R.id.tvYaTienesCuenta)
+
+        btnVolver.setOnClickListener {
+            finish()
+        }
 
         val tiposVehiculo = listOf("Tipo de vehículo", "Carro", "Moto")
         val adapter = object : ArrayAdapter<String>(
