@@ -1,14 +1,17 @@
 package com.example.waysmart_mobile
 
 import android.animation.ObjectAnimator
+import android.animation.PropertyValuesHolder
 import android.animation.ValueAnimator
 import android.os.Bundle
 import android.view.View
 import android.view.animation.AnimationUtils
+import android.view.animation.DecelerateInterpolator
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.ImageView
+import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -30,14 +33,16 @@ class VehicleActivity : AppCompatActivity() {
 
     private lateinit var ivVehicleIllustration: ImageView
     private lateinit var heroIllustrationContainer: View
-    private lateinit var cardVehicleDetails: View
+    private lateinit var heroCardContainer: View
     private lateinit var gridMetrics: View
     private lateinit var cardDocumentation: View
     private lateinit var chipGpsStatus: View
+    private lateinit var progressFuel: ProgressBar
     private lateinit var btnEditVehicleData: Button
     private lateinit var btnBack: ImageButton
 
     private var floatingAnimator: ObjectAnimator? = null
+    private var haloPulseAnimator: ObjectAnimator? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -68,10 +73,11 @@ class VehicleActivity : AppCompatActivity() {
 
         ivVehicleIllustration = findViewById(R.id.ivVehicleIllustration)
         heroIllustrationContainer = findViewById(R.id.heroIllustrationContainer)
-        cardVehicleDetails = findViewById(R.id.cardVehicleDetails)
+        heroCardContainer = findViewById(R.id.heroCardContainer)
         gridMetrics = findViewById(R.id.gridMetrics)
         cardDocumentation = findViewById(R.id.cardDocumentation)
         chipGpsStatus = findViewById(R.id.chipGpsStatus)
+        progressFuel = findViewById(R.id.progressFuel)
         btnEditVehicleData = findViewById(R.id.btnEditVehicleData)
         btnBack = findViewById(R.id.btnBack)
     }
@@ -119,43 +125,55 @@ class VehicleActivity : AppCompatActivity() {
     }
 
     /**
-     * Inicia las animaciones de entrada, pulso y levitación continua del vehículo.
+     * Inicia las animaciones de entrada, pulso, barra de combustible y levitación continua.
      */
     private fun startAnimations() {
-        // 1. Animación continua de flotación para la motocicleta
-        floatingAnimator = ObjectAnimator.ofFloat(ivVehicleIllustration, "translationY", -10f, 10f).apply {
+        // 1. Flotación continua para la motocicleta
+        floatingAnimator = ObjectAnimator.ofFloat(ivVehicleIllustration, "translationY", -7f, 7f).apply {
             duration = 1800
             repeatMode = ValueAnimator.REVERSE
             repeatCount = ValueAnimator.INFINITE
             start()
         }
 
-        // 2. Animación de pulso para el badge de GPS Activo
+        // 2. Respiración suave en el halo de luz detrás de la moto ✨
+        val scaleX = PropertyValuesHolder.ofFloat(View.SCALE_X, 1f, 1.06f)
+        val scaleY = PropertyValuesHolder.ofFloat(View.SCALE_Y, 1f, 1.06f)
+        haloPulseAnimator = ObjectAnimator.ofPropertyValuesHolder(heroIllustrationContainer, scaleX, scaleY).apply {
+            duration = 1600
+            repeatMode = ValueAnimator.REVERSE
+            repeatCount = ValueAnimator.INFINITE
+            start()
+        }
+
+        // 3. Pulso para el badge de GPS Activo
         val pulseAnim = AnimationUtils.loadAnimation(this, R.anim.pulse_glow)
         chipGpsStatus.startAnimation(pulseAnim)
 
-        // 3. Entradas escalonadas con Slide Up Fade
+        // 4. Llenado animado de la barra de combustible (0% -> 85%) ⛽
+        ObjectAnimator.ofInt(progressFuel, "progress", 0, 85).apply {
+            duration = 1000
+            startDelay = 300
+            interpolator = DecelerateInterpolator()
+            start()
+        }
+
+        // 5. Entradas escalonadas con Slide Up Fade
         val slideUpHero = AnimationUtils.loadAnimation(this, R.anim.slide_up_fade)
-        val slideUpCard = AnimationUtils.loadAnimation(this, R.anim.slide_up_fade)
         val slideUpGrid = AnimationUtils.loadAnimation(this, R.anim.slide_up_fade)
         val slideUpDocs = AnimationUtils.loadAnimation(this, R.anim.slide_up_fade)
 
-        heroIllustrationContainer.startAnimation(slideUpHero)
-
-        cardVehicleDetails.postDelayed({
-            cardVehicleDetails.visibility = View.VISIBLE
-            cardVehicleDetails.startAnimation(slideUpCard)
-        }, 120)
+        heroCardContainer.startAnimation(slideUpHero)
 
         gridMetrics.postDelayed({
             gridMetrics.visibility = View.VISIBLE
             gridMetrics.startAnimation(slideUpGrid)
-        }, 240)
+        }, 150)
 
         cardDocumentation.postDelayed({
             cardDocumentation.visibility = View.VISIBLE
             cardDocumentation.startAnimation(slideUpDocs)
-        }, 360)
+        }, 300)
     }
 
     /**
@@ -170,7 +188,6 @@ class VehicleActivity : AppCompatActivity() {
         val btnSave = dialogView.findViewById<Button>(R.id.btnDialogSave)
         val btnCancel = dialogView.findViewById<Button>(R.id.btnDialogCancel)
 
-        // Pre-llenar campos con información actual
         etType.setText(tvVehicleType.text)
         etBrandModel.setText(tvVehicleBrandModel.text)
         etPlate.setText(tvVehiclePlate.text)
@@ -199,12 +216,13 @@ class VehicleActivity : AppCompatActivity() {
             tvVehiclePlate.text = newPlate.uppercase()
             tvOdometer.text = newOdometer
 
-            cardVehicleDetails.animate()
+            // Efecto rebote en la tarjeta principal al guardar
+            heroCardContainer.animate()
                 .scaleX(1.02f)
                 .scaleY(1.02f)
                 .setDuration(120)
                 .withEndAction {
-                    cardVehicleDetails.animate().scaleX(1.0f).scaleY(1.0f).setDuration(120).start()
+                    heroCardContainer.animate().scaleX(1.0f).scaleY(1.0f).setDuration(120).start()
                 }
                 .start()
 
@@ -222,5 +240,6 @@ class VehicleActivity : AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
         floatingAnimator?.cancel()
+        haloPulseAnimator?.cancel()
     }
 }
