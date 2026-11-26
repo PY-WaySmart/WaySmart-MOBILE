@@ -12,6 +12,7 @@
         android:theme="@style/Theme.WaySmartMOBILE">
 
         <activity
+            android:name=".servicesActivity"
             android:name=".HomeActivity"
             android:exported="false" />
         <activity
