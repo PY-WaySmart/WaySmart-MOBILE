@@ -4,7 +4,7 @@ plugins {
 
 android {
     namespace = "com.example.waysmart_mobile"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.example.waysmart_mobile"

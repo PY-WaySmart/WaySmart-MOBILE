@@ -1,5 +1,6 @@
 package com.example.waysmart_mobile
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.activity.enableEdgeToEdge
@@ -15,11 +16,13 @@ class MainActivity : AppCompatActivity() {
         val btnRegister = findViewById<Button>(R.id.btnRegister)
 
         btnLogin.setOnClickListener {
-            // Acción para Iniciar Sesión (se conectará después)
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
         }
 
         btnRegister.setOnClickListener {
-            // Acción para Registrarse (se conectará después)
+            val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
         }
     }
 }

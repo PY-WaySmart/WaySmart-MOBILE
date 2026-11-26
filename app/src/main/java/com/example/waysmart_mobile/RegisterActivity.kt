@@ -1,5 +1,6 @@
 package com.example.waysmart_mobile
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.view.View
@@ -76,7 +77,8 @@ class RegisterActivity : AppCompatActivity() {
         }
 
         tvYaTienesCuenta.setOnClickListener {
-            Toast.makeText(this, "Redirigiendo a inicio de sesión...", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
             finish()
         }
     }
