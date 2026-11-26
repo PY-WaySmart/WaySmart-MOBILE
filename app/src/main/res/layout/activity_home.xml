@@ -2,28 +2,28 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="#C7E8FC">
+    android:background="#C7E8FC"
+    android:orientation="vertical">
 
     <!-- Encabezado -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="170dp"
-        android:orientation="horizontal"
+        android:background="@drawable/bg_home_header"
         android:gravity="center_vertical"
-        android:padding="24dp"
-        android:background="@drawable/bg_home_header">
+        android:orientation="horizontal"
+        android:padding="24dp">
 
         <!-- Avatar -->
         <TextView
             android:id="@+id/tvAvatar"
             android:layout_width="64dp"
             android:layout_height="64dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/bg_avatar"
             android:gravity="center"
             android:text="👤"
-            android:textSize="32sp"
-            android:background="@drawable/bg_avatar"
-            android:layout_marginEnd="16dp" />
+            android:textSize="32sp" />
 
         <!-- Saludo -->
         <LinearLayout
@@ -35,17 +35,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Hola,"
-                android:textSize="22sp"
-                android:textColor="#FFFFFF" />
+                android:textColor="#FFFFFF"
+                android:textSize="22sp" />
 
             <TextView
                 android:id="@+id/tvNombreRepartidor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Repartidor"
-                android:textStyle="bold"
+                android:textColor="#FFFFFF"
                 android:textSize="22sp"
-                android:textColor="#FFFFFF" />
+                android:textStyle="bold" />
 
         </LinearLayout>
 
@@ -69,28 +69,28 @@
                 android:id="@+id/cardSolicitudes"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
                 android:layout_margin="6dp"
-                android:orientation="vertical"
-                android:gravity="center"
+                android:layout_weight="1"
                 android:background="@drawable/bg_card_solicitudes"
-                android:elevation="4dp"
                 android:clickable="true"
-                android:focusable="true">
+                android:elevation="4dp"
+                android:focusable="true"
+                android:gravity="center"
+                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
                     android:text="📋"
-                    android:textSize="36sp"
-                    android:layout_marginBottom="8dp" />
+                    android:textSize="36sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Solicitudes"
-                    android:textSize="16sp"
-                    android:textColor="#FFFFFF" />
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp" />
 
             </LinearLayout>
 
@@ -99,28 +99,28 @@
                 android:id="@+id/cardVehiculo"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
                 android:layout_margin="6dp"
-                android:orientation="vertical"
-                android:gravity="center"
+                android:layout_weight="1"
                 android:background="@drawable/bg_card_vehiculo"
-                android:elevation="4dp"
                 android:clickable="true"
-                android:focusable="true">
+                android:elevation="4dp"
+                android:focusable="true"
+                android:gravity="center"
+                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
                     android:text="🚘"
-                    android:textSize="36sp"
-                    android:layout_marginBottom="8dp" />
+                    android:textSize="36sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Mi Vehículo"
-                    android:textSize="16sp"
-                    android:textColor="#FFFFFF" />
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp" />
 
             </LinearLayout>
 
@@ -137,28 +137,28 @@
                 android:id="@+id/cardPerfil"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
                 android:layout_margin="6dp"
-                android:orientation="vertical"
-                android:gravity="center"
+                android:layout_weight="1"
                 android:background="@drawable/bg_card_perfil"
-                android:elevation="4dp"
                 android:clickable="true"
-                android:focusable="true">
+                android:elevation="4dp"
+                android:focusable="true"
+                android:gravity="center"
+                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
                     android:text="👤"
-                    android:textSize="36sp"
-                    android:layout_marginBottom="8dp" />
+                    android:textSize="36sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Mi Perfil"
-                    android:textSize="16sp"
-                    android:textColor="#FFFFFF" />
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp" />
 
             </LinearLayout>
 
@@ -166,8 +166,8 @@
             <View
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:layout_margin="6dp" />
+                android:layout_margin="6dp"
+                android:layout_weight="1" />
 
         </LinearLayout>
 
