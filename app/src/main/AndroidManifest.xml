@@ -46,6 +46,12 @@
             android:name=".DeliveryDetail"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".VehicleActivity"
+            android:exported="false"
+            android:label="@string/title_my_vehicle" />
+
     </application>
 
 </manifest>

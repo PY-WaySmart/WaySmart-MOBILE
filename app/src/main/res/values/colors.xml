@@ -19,4 +19,22 @@
     <color name="waysmart_border">#E2E8F0</color>
     <color name="waysmart_text_primary">#0F172A</color>
     <color name="waysmart_text_secondary">#64748B</color>
+    <color name="white">#FFFFFF</color>
+
+    <!-- WaySmart Cobalt & Deep Navy Premium UI Palette -->
+    <color name="bg_abyss">#060B19</color>
+    <color name="bg_navy">#0B1636</color>
+    <color name="bg_cobalt">#1D4ED8</color>
+    <color name="bg_royal">#2563EB</color>
+    <color name="cyan_bright">#38BDF8</color>
+    <color name="ice_muted">#CBD5E1</color>
+    <color name="glass_surface">#AD0B1636</color>
+    <color name="glass_border">#3838BDF8</color>
+    <color name="status_active_text">#86EFAC</color>
+    <color name="status_active_border">#5922C55E</color>
+    <color name="status_active_bg">#2022C55E</color>
+    <color name="status_pending_text">#FDE68A</color>
+    <color name="status_pending_border">#59EAB308</color>
+    <color name="status_pending_bg">#20EAB308</color>
+    <color name="glass_input_bg">#200B1636</color>
 </resources>

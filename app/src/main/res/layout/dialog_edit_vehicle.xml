@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_dialog_premium"
+    tools:background="@color/bg_abyss">
+
+    <!-- Marca de agua WaySmart sutil -->
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="end|top"
+        android:layout_marginTop="-20dp"
+        android:layout_marginEnd="-25dp"
+        android:alpha="0.05"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_waysmart_logo" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="22dp">
+
+        <!-- Píldora decorativa superior (estilo BottomSheet) -->
+        <View
+            android:layout_width="38dp"
+            android:layout_height="4dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/bg_status_active" />
+
+        <!-- Header del Diálogo -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <FrameLayout
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:background="@drawable/bg_icon_circle">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:contentDescription="Icon Edit"
+                    android:src="@drawable/ic_edit"
+                    app:tint="@color/cyan_bright" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvDialogTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dialog_edit_title"
+                    android:textColor="@color/white"
+                    android:textSize="19sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="@string/dialog_edit_subtitle"
+                    android:textColor="@color/cyan_bright"
+                    android:textSize="11sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginVertical="16dp"
+            android:background="@color/glass_border" />
+
+        <!-- Campo 1: Tipo + Selección rápida -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:letterSpacing="0.06"
+            android:text="@string/label_vehicle_type"
+            android:textColor="@color/ice_muted"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <!-- Chips rápidos para rellenar con 1 toque -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/chipTypeMoto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_status_active"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="5dp"
+                android:text="🏍️ Moto"
+                android:textColor="@color/cyan_bright"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/chipTypeCar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/bg_plate_badge"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="5dp"
+                android:text="🚗 Auto"
+                android:textColor="@color/white"
+                android:textSize="11sp" />
+
+            <TextView
+                android:id="@+id/chipTypeTruck"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/bg_plate_badge"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="5dp"
+                android:text="🚚 Carga"
+                android:textColor="@color/white"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/etVehicleType"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:autofillHints="none"
+            android:background="@drawable/bg_input_field_premium"
+            android:drawableStart="@drawable/ic_tag"
+            android:drawablePadding="12dp"
+            android:hint="@string/hint_vehicle_type"
+            android:inputType="textCapWords"
+            android:paddingHorizontal="14dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/ice_muted"
+            android:textSize="14sp" />
+
+        <!-- Campo 2: Marca / Modelo -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:letterSpacing="0.06"
+            android:text="@string/label_vehicle_brand_model"
+            android:textColor="@color/ice_muted"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/etVehicleBrandModel"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="6dp"
+            android:autofillHints="none"
+            android:background="@drawable/bg_input_field_premium"
+            android:drawableStart="@drawable/ic_edit"
+            android:drawablePadding="12dp"
+            android:hint="@string/hint_vehicle_brand_model"
+            android:inputType="textCapWords"
+            android:paddingHorizontal="14dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/ice_muted"
+            android:textSize="14sp"
+            app:drawableTint="@color/cyan_bright" />
+
+        <!-- Fila Doble: Placa + Kilometraje lado a lado -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:baselineAligned="false"
+            android:orientation="horizontal">
+
+            <!-- Columna Placa -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="6dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:letterSpacing="0.06"
+                    android:text="@string/label_vehicle_plate"
+                    android:textColor="@color/ice_muted"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/etVehiclePlate"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="6dp"
+                    android:autofillHints="none"
+                    android:background="@drawable/bg_input_field_premium"
+                    android:drawableStart="@drawable/ic_badge"
+                    android:drawablePadding="10dp"
+                    android:fontFamily="monospace"
+                    android:hint="@string/hint_vehicle_plate"
+                    android:inputType="textCapCharacters"
+                    android:paddingHorizontal="12dp"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/ice_muted"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <!-- Columna Kilometraje -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:layout_weight="1.15"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:letterSpacing="0.06"
+                    android:text="@string/label_odometer"
+                    android:textColor="@color/ice_muted"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/etVehicleOdometer"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="6dp"
+                    android:autofillHints="none"
+                    android:background="@drawable/bg_input_field_premium"
+                    android:drawableStart="@drawable/ic_speedometer"
+                    android:drawablePadding="10dp"
+                    android:hint="@string/hint_odometer"
+                    android:inputType="text"
+                    android:paddingHorizontal="12dp"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/ice_muted"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Botones Simétricos 50/50 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnDialogCancel"
+                style="?attr/borderlessButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="6dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_plate_badge"
+                android:text="@string/btn_cancel"
+                android:textAllCaps="false"
+                android:textColor="@color/ice_muted"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnDialogSave"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="6dp"
+                android:layout_weight="1.2"
+                android:background="@drawable/bg_gradient_button"
+                android:text="@string/btn_save"
+                android:textAllCaps="false"
+                android:textColor="@color/bg_abyss"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:backgroundTint="@null" />
+        </LinearLayout>
+
+    </LinearLayout>
+</FrameLayout>
