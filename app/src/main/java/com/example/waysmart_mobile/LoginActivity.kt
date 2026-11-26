@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.text.SpannableString
 import android.text.Spanned
 import android.text.style.StyleSpan
+import android.util.Patterns
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
@@ -19,6 +20,10 @@ import androidx.core.view.WindowInsetsCompat
 
 class LoginActivity : AppCompatActivity() {
 
+    companion object {
+        private const val VALID_EMAIL = "waysmart.business@gmail.com"
+        private const val VALID_PASSWORD = "waysmart12345"
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -70,13 +75,29 @@ class LoginActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
+            if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                etEmail.error = "Ingresa un correo electrónico válido"
+                etEmail.requestFocus()
+                return@setOnClickListener
+            }
+
             if (password.isEmpty()) {
                 etPassword.error = getString(R.string.error_password_required)
                 etPassword.requestFocus()
                 return@setOnClickListener
             }
 
-            Toast.makeText(this, "Ingresando...", Toast.LENGTH_SHORT).show()
+            if ((email != VALID_EMAIL) || (password != VALID_PASSWORD)) {
+                Toast.makeText(this, "Usuario o contraseña incorrectos", Toast.LENGTH_LONG).show()
+                etEmail.error = "Usuario no encontrado o credenciales incorrectas"
+                etEmail.requestFocus()
+                return@setOnClickListener
+            }
+
+            Toast.makeText(this, "Inicio de sesión exitoso", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, HomeActivity::class.java)
+            startActivity(intent)
+            finish()
         }
 
         tvRegister.setOnClickListener {

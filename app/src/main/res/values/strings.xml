@@ -7,7 +7,6 @@
     <string name="register_bold_part">Regístrate</string>
     <string name="error_email_required">Ingresa tu correo electrónico</string>
     <string name="error_password_required">Ingresa tu contraseña</string>
-    <string name="app_name">WaySmart-MOBILE</string>
     <string name="title_my_vehicle">Mi Vehículo</string>
     <string name="header_subtitle">Gestión y Estado General</string>
     <string name="label_vehicle_type">Tipo de vehículo</string>

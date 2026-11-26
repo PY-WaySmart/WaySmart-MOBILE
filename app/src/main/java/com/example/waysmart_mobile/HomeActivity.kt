@@ -17,7 +17,7 @@ class HomeActivity : AppCompatActivity() {
         val cardPerfil = findViewById<LinearLayout>(R.id.cardPerfil)
 
         cardSolicitudes.setOnClickListener {
-            startActivity(Intent(this, ServicesActivity::class.java))
+            startActivity(Intent(this, servicesActivity::class.java))
         }
 
         cardVehiculo.setOnClickListener {

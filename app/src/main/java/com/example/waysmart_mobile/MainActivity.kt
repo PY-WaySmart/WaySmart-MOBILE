@@ -24,9 +24,5 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
         }
-
-        findViewById<Button>(R.id.btnOpenVehicle).setOnClickListener {
-            startActivity(Intent(this, VehicleActivity::class.java))
-        }
     }
 }

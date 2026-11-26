@@ -38,12 +38,16 @@
             android:theme="@style/Theme.WaySmartMOBILE" />
 
         <activity
-            android:name=".servicesActivity"
             android:name=".HomeActivity"
+            android:exported="false"
+            android:theme="@style/Theme.WaySmartMOBILE" />
+
+        <activity
+            android:name=".servicesActivity"
             android:exported="false" />
 
         <activity
-            android:name=".DeliveryDetail"
+            android:name=".DeliveryDetailActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
 

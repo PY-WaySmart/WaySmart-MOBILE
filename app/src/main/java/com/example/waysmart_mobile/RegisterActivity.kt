@@ -3,6 +3,7 @@ package com.example.waysmart_mobile
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import android.util.Patterns
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
@@ -60,20 +61,55 @@ class RegisterActivity : AppCompatActivity() {
             val nombre = etNombreCompleto.text.toString().trim()
             val correo = etCorreo.text.toString().trim()
             val telefono = etTelefono.text.toString().trim()
-            val vehiculo = spinnerTipoVehiculo.selectedItem.toString()
+            val vehiculoPos = spinnerTipoVehiculo.selectedItemPosition
             val placa = etPlaca.text.toString().trim().uppercase()
 
-            if (nombre.isEmpty() || correo.isEmpty() || telefono.isEmpty() || placa.isEmpty()) {
-                Toast.makeText(this, "Por favor completa todos los campos", Toast.LENGTH_SHORT).show()
+            if (nombre.isEmpty()) {
+                etNombreCompleto.error = "Ingresa tu nombre completo"
+                etNombreCompleto.requestFocus()
                 return@setOnClickListener
             }
 
-            if (spinnerTipoVehiculo.selectedItemPosition == 0) {
-                Toast.makeText(this, "Selecciona Carro o Moto", Toast.LENGTH_SHORT).show()
+            if (correo.isEmpty()) {
+                etCorreo.error = "Ingresa tu correo electrónico"
+                etCorreo.requestFocus()
                 return@setOnClickListener
             }
 
-            Toast.makeText(this, "Registro exitoso para $nombre ($vehiculo - $placa)", Toast.LENGTH_LONG).show()
+            if (!Patterns.EMAIL_ADDRESS.matcher(correo).matches()) {
+                etCorreo.error = "Ingresa un correo electrónico válido"
+                etCorreo.requestFocus()
+                return@setOnClickListener
+            }
+
+            if (telefono.isEmpty()) {
+                etTelefono.error = "Ingresa tu número de teléfono"
+                etTelefono.requestFocus()
+                return@setOnClickListener
+            }
+
+            if ((!Patterns.PHONE.matcher(telefono).matches()) || (telefono.length < 7)) {
+                etTelefono.error = "Ingresa un número de teléfono válido"
+                etTelefono.requestFocus()
+                return@setOnClickListener
+            }
+
+            if (vehiculoPos == 0) {
+                Toast.makeText(this, "Selecciona el tipo de vehículo", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            if (placa.isEmpty()) {
+                etPlaca.error = "Ingresa la placa del vehículo"
+                etPlaca.requestFocus()
+                return@setOnClickListener
+            }
+
+            Toast.makeText(this, "Registro exitoso", Toast.LENGTH_SHORT).show()
+
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+            finish()
         }
 
         tvYaTienesCuenta.setOnClickListener {

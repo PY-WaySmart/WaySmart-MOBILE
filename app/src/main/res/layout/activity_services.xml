@@ -6,13 +6,14 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg_main_gradient"
     tools:context=".servicesActivity">
 
     <FrameLayout
         android:id="@+id/header"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="#1E3A5F"
+        android:background="@drawable/bg_header_border"
         android:padding="16dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,8 +28,8 @@
             android:contentDescription="Volver"
             android:padding="8dp"
             android:scaleType="fitCenter"
-            android:src="@drawable/flecha_izquierda"
-            android:tint="@color/white" />
+            android:src="@drawable/ic_arrow_back"
+            app:tint="@color/white" />
 
         <TextView
             android:layout_width="match_parent"
@@ -39,8 +40,9 @@
             android:gravity="center"
             android:singleLine="true"
             android:text="Servicios disponibles"
-            android:textColor="@android:color/white"
-            android:textSize="20sp" />
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
     </FrameLayout>
 
@@ -63,9 +65,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="12dp"
-                app:cardBackgroundColor="#E0E0E0"
+                app:cardBackgroundColor="@color/bg_navy"
                 app:cardCornerRadius="16dp"
-                app:cardElevation="0dp">
+                app:strokeColor="@color/glass_border"
+                app:strokeWidth="1dp"
+                app:cardElevation="4dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -77,6 +81,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Origen - 1.3 km"
+                        android:textColor="@color/white"
                         android:textSize="16sp" />
 
                     <TextView
@@ -84,6 +89,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:text="Destino - Calle 123 #45-67"
+                        android:textColor="@color/cyan_bright"
                         android:textSize="16sp" />
 
                     <TextView
@@ -91,16 +97,21 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="end"
                         android:layout_marginTop="8dp"
-                        android:background="#AFC4D8"
-                        android:padding="8dp"
+                        android:background="@drawable/bg_status_active"
+                        android:paddingHorizontal="12dp"
+                        android:paddingVertical="6dp"
                         android:text="Ganancia - $10.000"
-                        android:textSize="16sp" />
+                        android:textColor="@color/status_active_text"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
 
                     <Button
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-                        android:text="Ver detalle" />
+                        android:backgroundTint="@color/bg_cobalt"
+                        android:text="Ver detalle"
+                        android:textColor="@color/white" />
 
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
@@ -109,9 +120,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="12dp"
-                app:cardBackgroundColor="#E0E0E0"
+                app:cardBackgroundColor="@color/bg_navy"
                 app:cardCornerRadius="16dp"
-                app:cardElevation="0dp">
+                app:strokeColor="@color/glass_border"
+                app:strokeWidth="1dp"
+                app:cardElevation="4dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -123,6 +136,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Origen - 2.1 km"
+                        android:textColor="@color/white"
                         android:textSize="16sp" />
 
                     <TextView
@@ -130,6 +144,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:text="Destino - Carrera 15 #82-40"
+                        android:textColor="@color/cyan_bright"
                         android:textSize="16sp" />
 
                     <TextView
@@ -137,16 +152,21 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="end"
                         android:layout_marginTop="8dp"
-                        android:background="#AFC4D8"
-                        android:padding="8dp"
+                        android:background="@drawable/bg_status_active"
+                        android:paddingHorizontal="12dp"
+                        android:paddingVertical="6dp"
                         android:text="Ganancia - $14.500"
-                        android:textSize="16sp" />
+                        android:textColor="@color/status_active_text"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
 
                     <Button
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-                        android:text="Ver detalle" />
+                        android:backgroundTint="@color/bg_cobalt"
+                        android:text="Ver detalle"
+                        android:textColor="@color/white" />
 
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
@@ -155,9 +175,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="12dp"
-                app:cardBackgroundColor="#E0E0E0"
+                app:cardBackgroundColor="@color/bg_navy"
                 app:cardCornerRadius="16dp"
-                app:cardElevation="0dp">
+                app:strokeColor="@color/glass_border"
+                app:strokeWidth="1dp"
+                app:cardElevation="4dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -169,6 +191,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Origen - 0.8 km"
+                        android:textColor="@color/white"
                         android:textSize="16sp" />
 
                     <TextView
@@ -176,6 +199,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:text="Destino - Calle 10 #6-25"
+                        android:textColor="@color/cyan_bright"
                         android:textSize="16sp" />
 
                     <TextView
@@ -183,16 +207,21 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="end"
                         android:layout_marginTop="8dp"
-                        android:background="#AFC4D8"
-                        android:padding="8dp"
+                        android:background="@drawable/bg_status_active"
+                        android:paddingHorizontal="12dp"
+                        android:paddingVertical="6dp"
                         android:text="Ganancia - $8.000"
-                        android:textSize="16sp" />
+                        android:textColor="@color/status_active_text"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
 
                     <Button
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-                        android:text="Ver detalle" />
+                        android:backgroundTint="@color/bg_cobalt"
+                        android:text="Ver detalle"
+                        android:textColor="@color/white" />
 
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
@@ -201,9 +230,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="12dp"
-                app:cardBackgroundColor="#E0E0E0"
+                app:cardBackgroundColor="@color/bg_navy"
                 app:cardCornerRadius="16dp"
-                app:cardElevation="0dp">
+                app:strokeColor="@color/glass_border"
+                app:strokeWidth="1dp"
+                app:cardElevation="4dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -215,6 +246,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Origen - 3.5 km"
+                        android:textColor="@color/white"
                         android:textSize="16sp" />
 
                     <TextView
@@ -222,6 +254,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:text="Destino - Avenida 30 #14-52"
+                        android:textColor="@color/cyan_bright"
                         android:textSize="16sp" />
 
                     <TextView
@@ -229,16 +262,21 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="end"
                         android:layout_marginTop="8dp"
-                        android:background="#AFC4D8"
-                        android:padding="8dp"
+                        android:background="@drawable/bg_status_active"
+                        android:paddingHorizontal="12dp"
+                        android:paddingVertical="6dp"
                         android:text="Ganancia - $18.000"
-                        android:textSize="16sp" />
+                        android:textColor="@color/status_active_text"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
 
                     <Button
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-                        android:text="Ver detalle" />
+                        android:backgroundTint="@color/bg_cobalt"
+                        android:text="Ver detalle"
+                        android:textColor="@color/white" />
 
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
