@@ -3,6 +3,7 @@ package com.example.waysmart_mobile
 import android.content.Intent
 import android.graphics.Typeface
 import android.os.Bundle
+import android.text.InputType
 import android.text.SpannableString
 import android.text.Spanned
 import android.text.style.StyleSpan
@@ -43,9 +44,28 @@ class LoginActivity : AppCompatActivity() {
     private fun setupUI() {
         val etEmail = findViewById<EditText>(R.id.etEmail)
         val etPassword = findViewById<EditText>(R.id.etPassword)
+        val btnTogglePassword = findViewById<ImageButton>(R.id.btnTogglePassword)
         val btnLogin = findViewById<Button>(R.id.btnLogin)
         val tvRegister = findViewById<TextView>(R.id.tvRegister)
         val btnBack = findViewById<ImageButton>(R.id.btnBack)
+
+        var isPasswordVisible = false
+
+        btnTogglePassword.setOnClickListener {
+            isPasswordVisible = !isPasswordVisible
+            val typeface = etPassword.typeface
+            if (isPasswordVisible) {
+                etPassword.inputType =
+                    InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+                btnTogglePassword.setImageResource(R.drawable.ic_visibility)
+            } else {
+                etPassword.inputType =
+                    InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+                btnTogglePassword.setImageResource(R.drawable.ic_visibility_off)
+            }
+            etPassword.typeface = typeface
+            etPassword.setSelection(etPassword.text?.length ?: 0)
+        }
 
         btnBack.setOnClickListener {
             finish()

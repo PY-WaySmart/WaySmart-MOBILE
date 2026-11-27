@@ -53,14 +53,9 @@ class ProfileActivity : AppCompatActivity() {
     private fun configurarEventos() {
         // 1. Botón Volver (flecha superior izquierda -> HomeActivity)
         binding.btnProfileVolver.setOnClickListener {
-            Toast.makeText(this, "Volviendo a Pantalla Principal...", Toast.LENGTH_SHORT).show()
-
-            // TODO: INTEGRACIÓN - Descomentar cuando HomeActivity exista en el proyecto:
-            /*
             val intent = Intent(this, HomeActivity::class.java)
             startActivity(intent)
             finish()
-            */
         }
 
         // 2. Botón Cerrar Sesión (con confirmación Sí / No -> LoginActivity)
@@ -69,24 +64,15 @@ class ProfileActivity : AppCompatActivity() {
                 .setTitle("Cerrar Sesión")
                 .setMessage("¿Estás seguro de que deseas cerrar sesión?")
                 .setPositiveButton("Sí") { _, _ ->
-                    // Limpia los datos de sesión guardados en el dispositivo
                     val prefs = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
                     prefs.edit().clear().apply()
 
-                    // Feedback visual mientras se integra LoginActivity
-                    binding.tvProfileNombre.text = "Sesión cerrada"
-                    binding.tvProfileCorreo.text = "---"
-                    binding.tvProfileTelefono.text = "---"
+                    Toast.makeText(this, "Sesión cerrada", Toast.LENGTH_SHORT).show()
 
-                    Toast.makeText(this, "Sesión cerrada. Redirigiendo a Login...", Toast.LENGTH_SHORT).show()
-
-                    // TODO: INTEGRACIÓN - Descomentar cuando LoginActivity exista en el proyecto:
-                    /*
                     val intent = Intent(this, LoginActivity::class.java)
                     intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                     startActivity(intent)
                     finish()
-                    */
                 }
                 .setNegativeButton("No", null)
                 .show()
