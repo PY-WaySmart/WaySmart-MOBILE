@@ -12,10 +12,11 @@ class servicesActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_services)
 
-        setContentView(R.layout.activity_services)
-
         findViewById<android.widget.ImageButton>(R.id.btnAtras).setOnClickListener {
             finish()
+        }
+        findViewById<android.widget.Button>(R.id.btnVerDetalle).setOnClickListener {
+            startActivity(android.content.Intent(this, DeliveryDetailActivity::class.java))
         }
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
